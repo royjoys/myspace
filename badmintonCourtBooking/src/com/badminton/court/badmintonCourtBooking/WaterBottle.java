@@ -1,19 +1,20 @@
 package com.badminton.court.badmintonCourtBooking;
 
 public class WaterBottle extends CourtDecorator {
-
-	public WaterBottle(Court court) {
+	private int count = 0;
+	public WaterBottle(Court court, int count) {
 		super(court);
+		this.count = count;
 	}
 
 	@Override
 	public String info() {
-		return "Adding Water Bottle with "+ super.info();
+		return "Adding "+this.count+" Water Bottle with "+ super.info();
 	}
 
 	@Override
 	public double cost() {
-		return 10 + super.cost();
+		return 10*this.count + super.cost();
 	}
 
 }
