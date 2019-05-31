@@ -1,22 +1,22 @@
 package com.badminton.court.badmintonCourtBooking;
 
-public class WoodenCourt implements Court {
+public class SyntheticCourt implements Court {
 
 	private int hours;
-
-	public WoodenCourt(int hours) {
+	
+	public SyntheticCourt(int hours) {
 		super();
 		this.hours = hours;
 	}
 
 	@Override
 	public String info() {
-		return "Enjoy Wooden Court";
+		return "Enjoy Synthetic Court";
 	}
 
 	@Override
 	public double cost() {
-		return 300*hours;
+		return 250*hours;
 	}
 
 }
