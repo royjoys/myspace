@@ -1,4 +1,4 @@
-package com.badminton.court.badmintonCourtBooking;
+package com.designpattern.decorator;
 
 public class WaterBottle extends CourtDecorator {
 	private int count = 0;
