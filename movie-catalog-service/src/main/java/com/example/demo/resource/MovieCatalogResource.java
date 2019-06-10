@@ -42,7 +42,7 @@ public class MovieCatalogResource {
 
 	private Movie getRating(Movie m) {
 
-		Movie forObject = restTemplate.getForObject("http://localhost:8081/rating/" + m.getMovieId(), Movie.class);
+		Movie forObject = restTemplate.getForObject("http://MOVIE-RATING-SERVICE/rating/" + m.getMovieId(), Movie.class);
 		System.out.println("m" + forObject);
 		m.setRating(forObject.getRating());
 		return m;
