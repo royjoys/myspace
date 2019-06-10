@@ -16,7 +16,8 @@ public class MovieCatalogService {
 
 	public List<Movie> getMovies(String name) {
 		return Arrays.asList(new Movie("m1", "Xmen", "Xmen Movie Desc"),
-				new Movie("m2", "Avengers", "Avengers Movie Desc"));
+				new Movie("m2", "Avengers", "Avengers Movie Desc"),
+				new Movie("m3", "Avatar", "Avatar Movie Desc"));
 	}
 
 }
