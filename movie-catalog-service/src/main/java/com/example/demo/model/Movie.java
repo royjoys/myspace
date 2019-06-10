@@ -13,6 +13,11 @@ public class Movie {
 		this.desc = desc;
 		this.rating = rating;
 	}
+	public Movie(String movieId, String name, String desc) {
+		this.movieId = movieId;
+		this.name = name;
+		this.desc = desc;
+	}
 	public Movie() {
 	}
 	public String getMovieId() {

@@ -38,12 +38,11 @@ public class MovieCatalogResourceTest {
 		mock = standaloneSetup(movieCatalogResource).build();
 	}
 
-	@Test
-	public void testMovieCatalog() throws Exception {
-		mock.perform(get("/rest/movie"))
-			.andExpect(status().isOk())
-			.andExpect(content().string("Movie"));
-	}
+	/*
+	 * @Test public void testMovieCatalog() throws Exception {
+	 * mock.perform(get("/rest/movie")) .andExpect(status().isOk())
+	 * .andExpect(content().string("Movie")); }
+	 */
 	
 	@Test
 	public void testMovieCatalogJson() throws Exception {
