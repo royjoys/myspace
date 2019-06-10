@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.model.Movie;
 import com.example.demo.model.Theatre;
@@ -20,6 +21,9 @@ public class MovieCatalogResource {
 	@Autowired
 	MovieCatalogService movieCatalogService;
 
+	@Autowired
+	RestTemplate restTemplate;
+
 	/*
 	 * @GetMapping("/movie") public String movieCatalog() { return "Movie"; }
 	 */
@@ -28,11 +32,20 @@ public class MovieCatalogResource {
 	public Theatre movieCatalogJson(@PathVariable(name = "name") String name,
 			@PathVariable(name = "location") String location) {
 		List<Movie> movies = movieCatalogService.getMovies(name);
-		movies = movies.stream().map(m -> new Movie(m.getMovieId(), m.getName(), m.getDesc(), m.getRating()))
+		movies = movies.stream()
+				.map(this::getRating)
 				.collect(Collectors.toList());
 		Theatre t = new Theatre("1", name, location, movies);
 		return t;
 
+	}
+
+	private Movie getRating(Movie m) {
+
+		Movie forObject = restTemplate.getForObject("http://localhost:8081/rating/" + m.getMovieId(), Movie.class);
+		System.out.println("m" + forObject);
+		m.setRating(forObject.getRating());
+		return m;
 	}
 
 }

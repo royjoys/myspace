@@ -44,6 +44,10 @@ public class Movie {
 	public void setRating(String rating) {
 		this.rating = rating;
 	}
+	@Override
+	public String toString() {
+		return "Movie [movieId=" + movieId + ", name=" + name + ", desc=" + desc + ", rating=" + rating + "]";
+	}
 	
 	
 
