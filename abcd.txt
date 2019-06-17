@@ -1,0 +1,10 @@
+https://www.educba.com/docker-interview-questions/
+
+https://www.edureka.co/blog/interview-questions/kubernetes-interview-questions/
+
+https://intellipaat.com/interview-question/no-sql-interview-questions/
+
+
+TDD:
+https://dzone.com/articles/preparing-for-a-tdd-interview
+https://www.wisdomjobs.com/e-university/test-driven-development-tdd-interview-questions.html
