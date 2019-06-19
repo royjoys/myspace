@@ -6,6 +6,7 @@ public class Movie {
 	private String name;
 	private String desc;
 	private String rating;
+	private int port;
 	
 	public Movie(String movieId, String name, String desc, String rating) {
 		this.movieId = movieId;
@@ -43,6 +44,12 @@ public class Movie {
 	}
 	public void setRating(String rating) {
 		this.rating = rating;
+	}
+	public int getPort() {
+		return port;
+	}
+	public void setPort(int port) {
+		this.port = port;
 	}
 	@Override
 	public String toString() {

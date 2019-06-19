@@ -48,6 +48,7 @@ public class MovieCatalogResource {
 	private Movie getRating(Movie m) {
 		Movie forObject = restTemplate.getForObject("http://MOVIE-RATING-SERVICE/rating/" + m.getMovieId(),
 				Movie.class);
+		m.setPort(forObject.getPort());
 		m.setRating(forObject.getRating());
 		return m;
 	}
